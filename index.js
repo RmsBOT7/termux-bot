@@ -161,7 +161,7 @@ client.on('group-participants-update', async (anu) => {
 			const from = mek.key.remoteJid
 			const type = Object.keys(mek.message)[0]
 			const barbarkey = '--'
-			const vhtearkey = 'APIKEYLU'
+			const vhtearkey = '--'
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 			const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
 			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
@@ -187,7 +187,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["6289636006352@s.whatsapp.net"] // ganti nomer lu
+			const ownerNumber = '6289636006352@s.whatsapp.net' // ganti nomer lu
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const totalchat = await client.chats.all()
@@ -228,7 +228,6 @@ client.on('group-participants-update', async (anu) => {
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
-				case 'hidetag1':
 				case 'hidetag':
 					members_id = []
 					teks = (args.length > 1) ? body.slice(9).trim() : `${body.slice(8)}`
@@ -243,7 +242,7 @@ client.on('group-participants-update', async (anu) => {
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					var selepbot = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -307,7 +306,7 @@ client.on('group-participants-update', async (anu) => {
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const groupp = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -330,7 +329,7 @@ client.on('group-participants-update', async (anu) => {
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const wimki = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -351,7 +350,7 @@ client.on('group-participants-update', async (anu) => {
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const gcname = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -368,7 +367,7 @@ client.on('group-participants-update', async (anu) => {
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const gcdesk = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -386,7 +385,7 @@ client.on('group-participants-update', async (anu) => {
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const srotlink = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -406,7 +405,7 @@ client.on('group-participants-update', async (anu) => {
 					var split = `${fake}`
 					const rtimebro = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -421,7 +420,7 @@ client.on('group-participants-update', async (anu) => {
 						var split = `𝙋𝙡𝙖𝙮 𝙎𝙤𝙣𝙜 𝙁𝙧𝙤𝙢 𝙅𝙤𝙤𝙭`
 						var selepbot = {
 						contextInfo: {
-						participant: itsme,
+						participant: '0@s.whatsapp.net',
 						quotedMessage: {
 						extendedTextMessage: {
 						text: split,
@@ -444,7 +443,7 @@ client.on('group-participants-update', async (anu) => {
 						var split = `𝙋𝙡𝙖𝙮 𝙎𝙤𝙣𝙜 𝙁𝙧𝙤𝙢 𝙔𝙤𝙪𝙩𝙪𝙗𝙚`
 						var selepbot = {
 						contextInfo: {
-						participant: itsme,
+						participant: '0@s.whatsapp.net',
 						quotedMessage: {
 						extendedTextMessage: {
 						text: split,
@@ -467,7 +466,7 @@ client.on('group-participants-update', async (anu) => {
 							var split = `𝙎𝙚𝙖𝙧𝙘𝙝𝙞𝙣𝙜 𝙄𝙢𝙖𝙜𝙚 𝙁𝙧𝙤𝙢 𝙋𝙞𝙣𝙩𝙚𝙧𝙚𝙨𝙩`
 							var selepbot = {
 							contextInfo: {
-							participant: itsme,
+							participant: '0@s.whatsapp.net',
 							quotedMessage: {
 							extendedTextMessage: {
 							text: split,
@@ -563,7 +562,7 @@ client.on('group-participants-update', async (anu) => {
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const kbbigan = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -584,7 +583,7 @@ client.on('group-participants-update', async (anu) => {
 						// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 						const linkgcgan = {
 						contextInfo: {
-						participant: itsme,
+						participant: '0@s.whatsapp.net',
 						quotedMessage: {
 						extendedTextMessage: {
 						text: split,
@@ -638,7 +637,7 @@ client.on('group-participants-update', async (anu) => {
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const tahta = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -652,12 +651,32 @@ client.on('group-participants-update', async (anu) => {
 				client.sendMessage(from, `_Otewe Nyet!_`, MessageType.text, tahta)
 				client.sendMessage(from, buffer, MessageType.image, { caption: `HARTA TAHTA ${teks}`, quoted: mek })
 				 break
+				 case 'party':
+					var itsme = `${numbernye}@s.whatsapp.net`
+					var split = `PARTY APA`
+					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					const tahta = {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					extendedTextMessage: {
+					text: split,
+									}
+								}
+							}
+						}
+					var teks = encodeURIComponent(body.slice(7))
+					if (!teks) return client.sendMessage(from, 'Input teks yang ingin di tulis', msgType.text, {quoted: mek})
+				var buffer = await getBuffer(`https://api.vhtear.com/partytext?text=${teks}&apikey=${vhtearkey}`)
+				client.sendMessage(from, `_Otewe Nyet!_`, MessageType.text, tahta)
+				client.sendMessage(from, buffer, MessageType.image, { caption: `HARTA TAHTA ${teks}`, quoted: mek })
+				 break
 				 case 'map':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
 					const maping = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -683,7 +702,7 @@ client.on('group-participants-update', async (anu) => {
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const thunder = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -711,7 +730,7 @@ client.on('group-participants-update', async (anu) => {
 					var split = `${fake}`
 					var selepbot = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -730,7 +749,7 @@ client.on('group-participants-update', async (anu) => {
 					var split = `${fake}`
 					var selepbot = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -749,7 +768,7 @@ client.on('group-participants-update', async (anu) => {
 					var split = `${fake}`
 					var selepbot = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -768,7 +787,7 @@ client.on('group-participants-update', async (anu) => {
 					var split = `${fake}`
 					var selepbot = {
 					contextInfo: {
-					participant: itsme,
+					participant: '0@s.whatsapp.net',
 					quotedMessage: {
 					extendedTextMessage: {
 					text: split,
@@ -787,7 +806,7 @@ case 'animehuggif':
 	var split = `${fake}`
 	var selepbot = {
 	contextInfo: {
-	participant: itsme,
+	participant: '0@s.whatsapp.net',
 	quotedMessage: {
 	extendedTextMessage: {
 	text: split,
@@ -807,7 +826,7 @@ case 'waifu':
 	// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 	var selepbot = {
 	contextInfo: {
-	participant: itsme,
+	participant: '0@s.whatsapp.net',
 	quotedMessage: {
 	extendedTextMessage: {
 	text: split,
@@ -885,6 +904,7 @@ case 'help':
 ├ ${prefix}pinterest <optional>
 ├ ${prefix}logowolf [teks]
 ├ ${prefix}tahta [teks]
+├ ${prefix}party [teks]
 ├ ${prefix}thunder [teks]
 ├ ${prefix}wiki [teks]
 ├ ${prefix}map [optional]
@@ -945,7 +965,7 @@ case 'getsticker':
 	var split = `*𝙎𝙏𝙄𝘾𝙆𝙀𝙍 𝙁𝙍𝙊𝙈 𝘿𝘼𝙏𝘼𝘽𝘼𝙎𝙀*`
 	var selepbot = {
 		contextInfo: {
-		participant: itsme,
+		participant: '0@s.whatsapp.net',
 		quotedMessage: {
 		extendedTextMessage: {
 		text: split,
@@ -1082,7 +1102,7 @@ case 'cekchat':
 	var split = `*CEK ALL CHAT*`
 	var selepbot = {
 		contextInfo: {
-		participant: itsme,
+		participant: '0@s.whatsapp.net',
 		quotedMessage: {
 		extendedTextMessage: {
 		text: split,
@@ -1108,7 +1128,7 @@ case 'ping':
 	var split = `*𝙋𝙞𝙣𝙜!*`
 	const pingbro = {
 	contextInfo: {
-	participant: itsme,
+	participant: '0@s.whatsapp.net',
 	quotedMessage: {
 	extendedTextMessage: {
 	text: split,
@@ -1126,7 +1146,7 @@ case 'term':
 	var split = `*𝙀𝙓𝙀𝘾𝙐𝙏𝙊𝙍*`
 	const term = {
 	contextInfo: {
-	participant: itsme,
+	participant: '0@s.whatsapp.net',
 	quotedMessage: {
 	extendedTextMessage: {
 	text: split,
@@ -1135,7 +1155,7 @@ case 'term':
 		}
 	}
 	exec(cmd, (err, stdout) => {
-	if(err) return client.sendMessage(from, `root@MrG3P5:~ ${err}`, text, { quoted: mek })
+	if(err) return client.sendMessage(from, `root@Self:~ ${err}`, text, { quoted: mek })
 	if (stdout) {
 	client.sendMessage(from, stdout, text, term)
 		}
@@ -1144,10 +1164,10 @@ case 'term':
 case 'payment':
 case 'payments':
 	var itsme = `${numbernye}@s.whatsapp.net`
-	var split = `*𝙎𝙀𝙇𝙁-𝘽𝙊𝙏*`
+	var split = `*SELF-BOT*`
 	var selepbot = {
 	contextInfo: {
-	participant: itsme,
+	participant: '0@s.whatsapp.net',
 	quotedMessage: {
 	extendedTextMessage: {
 	text: split,
@@ -1155,7 +1175,7 @@ case 'payments':
 			}
 		}
 	}
-	client.sendMessage(from, `──「 *PAYMENT* 」──\n\n- Gopay : 0895-2325-8649\n- Pulsa : 0895-2325-8649 (+5K)\n\n──「 *SELF-BOT* 」──`, MessageType.text, selepbot)
+	client.sendMessage(from, `──「 *PAYMENT* 」──\n\n- Gopay : 0896-3600-6352\n- Pulsa : 0813-8728-9617 (+5K)\n\n──「 *SELF-BOT* 」──`, MessageType.text, selepbot)
 	break
 case 'neko':
 	{
@@ -1622,7 +1642,7 @@ case 'ownergc':
 	client.updatePresence(from, Presence.composing) 
 	var itsme = `${numbernye}@s.whatsapp.net`
 	hayukkkk = {
-	participant: itsme,
+	participant: '0@s.whatsapp.net',
 	text: `This Group Has been create by @${groupOwner.split("@")[0]}`,
 						
 	contextInfo: { mentionedJid: [groupOwner] }
