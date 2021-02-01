@@ -28,7 +28,9 @@ Cobain juga nih
 
 [TERMUX WHATSAPP BOT V1](https://github.com/bennyganteng/bennybotwa)
 
-Re-upload numpang ganti nama gabakal bikin lu pro
+<p align="center">
+<a href="#"><img title="Re-upload numpang ganti nama gabakal bikin lu pro" size="28" src="https://img.shields.io/badge/Whatsapp Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+</p>
 </div>
 
 * "Wahai orang-orang yang beriman, mengapakah kamu mengatakan sesuatu yang tidak kamu kerjakan?, Amat besar kebencian di sisi Allah bahwa kamu mengatakan apa-apa yang tidak kamu kerjakan."
