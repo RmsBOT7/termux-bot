@@ -21,6 +21,7 @@ const
 const qrcode = require("qrcode-terminal")
 const moment = require("moment-timezone")
 const fs = require("fs")
+const canvas = require('discord-canvas')
 const { color, bgcolor } = require('./lib/color')
 const { help } = require('./lib/help')
 const { donasi } = require('./lib/donasi')
@@ -41,13 +42,15 @@ const audionye = JSON.parse(fs.readFileSync('./src/audio.json'))
 const imagenye = JSON.parse(fs.readFileSync('./src/image.json'))
 const speed = require('performance-now')
 const speedTest = require('@lh2020/speedtest-net');
+const settingan = fs.readFileSync('./lib/setting.json')
 const { Utils_1 } = require('./node_modules/@adiwajshing/baileys/lib/WAConnection/Utils')
 
-prefix = '!' || '#' || '/' || '.' || 'b' || ''
+prefix = '#'
 fake = '*SELFBOT*'
 numbernye = '0'
 targetprivate = '0'
 blocked = []            
+banChats = false
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
 
@@ -123,9 +126,9 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Hallo @${num.split('@')[0]}\Welcome to group *${mdata.subject}* Jangan lupa intro kau!...Betah-betah yah di sini🖤`
+				teks = `Hallo @${num.split('@')[0]}\nWelcome to group *${mdata.subject}* Jangan lupa intro kau!...Betah-betah yah di sini🖤`
 				let buff = await getBuffer(ppimg)
-				client.sendMessage(mdata.id, teks, MessageType.text)
+				client.sendMessage(mdata.id, ppimg, MessageType.image, {caption: teks})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
 				try {
@@ -135,7 +138,7 @@ client.on('group-participants-update', async (anu) => {
 				}
 				teks = `Sayonara🥳 @${num.split('@')[0]} Al-fatihah buat yang left/terkick!.`
 				let buff = await getBuffer(ppimg)
-				client.sendMessage(mdata.id, teks, MessageType.text)
+				client.sendMessage(mdata.id, ppimg, MessageType.image, {caption: teks})
 			}
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
@@ -154,7 +157,7 @@ client.on('group-participants-update', async (anu) => {
 		try {
 			if (!mek.message) return
 			if (mek.key && mek.key.remoteJid == 'status@broadcast') return
-			if (!mek.key.fromMe) return
+			if (!mek.key.fromMe && banChats === true) return
 			global.prefix
 			global.blocked
 			const content = JSON.stringify(mek.message)
@@ -174,6 +177,7 @@ client.on('group-participants-update', async (anu) => {
 			mess = {
 				wait: '_Otewe Nyet_',
 				success: 'Berhasil!',
+				notDaftar: `Hai ${mek} Nomor kamu berlum terdaftar di database! \nSilahkan ketik *#daftar* untuk mendaftarkan nomor anda!`,
 				error: {
 					stick: 'Itu video gblk!',
 					Iv: 'Linknya mokad:v'
@@ -229,6 +233,34 @@ client.on('group-participants-update', async (anu) => {
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
+				case 'donasi':
+				case 'donate':
+					var itsme = `${numbernye}@s.whatsapp.net`
+					var split = `*_TERIMAKASIH SUDAH MAU DONASI_*`
+					var donat = `┏━━━━━━━━━━━━━━━━━━━━
+┃          𝗗𝗢𝗡𝗔𝗦𝗜  
+┣━━━━━━━━━━━━━━━━━━━━
+┣━⊱ 𝗗𝗢𝗡𝗔𝗦𝗜 𝗕𝗢𝗦𝗤𝗨𝗘 ❉⊰━━✿
+┃  
+┣➥ *OVO* : -
+┣➥ *PULSA* : 0813-8728-9617
+┣➥ *GOPAY* : 089636006352
+┃
+┣━━━━━━━━━━━━━━━━━━━━
+┃ _*POWERED BY BENNY*_
+┗━━━━━━━━━━━━━━━━━━━━`
+					const domnate = {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					extendedTextMessage: {
+					text: split,
+									}
+								}
+							}
+						}
+				    client.sendMessage(from, donat, MessageType.text, domnate)
+					break
 				case 'hidetag':
 					members_id = []
 					teks = (args.length > 1) ? body.slice(9).trim() : `${body.slice(8)}`
@@ -359,7 +391,7 @@ client.on('group-participants-update', async (anu) => {
 								}
 							}
 						}
-					axios.get(`https://masgi.herokuapp.com/api/cerpen`).then((res) => {
+					fetchJson('https://masgi.herokuapp.com/api/cerpen').then((res) => {
 						client.sendMessage(from, '[ WAIT ] Searching...⏳ silahkan tunggu', MessageType.text, cerpen)
 						let hasilnya = `Cerpen:\n${res.data}`;
 						client.sendMessage(from, hasilnya ,MessageType.text, cerpen);
@@ -530,9 +562,8 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, tod, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
 					break
 				case 'setreply':
-				case 'setfake':
 					if (args.length < 1) return
-					fake = args[0]
+					fake = body.slice(10)
 					reply(`berhasil ubah Fake reply menjadi : ${fake}`)
 					break
 				case 'setnumber':
@@ -726,9 +757,9 @@ client.on('group-participants-update', async (anu) => {
 								}
 							}
 						}
-					var teks = encodeURIComponent(body.slice(12))
+					var teks = body.slice(12)
 					if (!teks) return client.sendMessage(from, 'Input teks yang ingin di tulis', msgType.text, {quoted: mek})
-				var buffer = await getBuffer(`https://api.vhtear.com/write?text=${text}&apikey=${vhtearkey}`)
+				var buffer = `https://api.vhtear.com/write?text=${body.slice(12)}&apikey=${vhtearkey}`
 				client.sendMessage(from, `_Otewe Nyet!_`, MessageType.text, bukuf)
 				client.sendMessage(from, buffer, MessageType.image, { quoted: mek })
 				 break
@@ -933,6 +964,7 @@ case 'help':
 ├ ${prefix}gcdesk <text>
 ├ ${prefix}add 62xxx
 ├ ${prefix}kick 62xx
+├ ${prefix}kickall
 ├ ${prefix}demote @tag
 ├ ${prefix}promote @tag
 ├ ${prefix}tagall
@@ -995,6 +1027,8 @@ case 'help':
 ├「 *ADVANCE-MENU* 」
 │
 ├ ${prefix}payment
+├ ${prefix}self [private bot]
+├ ${prefix}public [public bot]
 ├ ${prefix}cr1 @tag text|text
 ├ ${prefix}cr2 <versi private>
 ├ ${prefix}runtime
@@ -1407,6 +1441,44 @@ case 'ocr':
 						})
 					})
 					break
+				case 'public':
+				    if (!mek.key.fromMe) return
+					if (banChats === false) return
+					var itsme = `${numbernye}@s.whatsapp.net`
+					var split = `${fake}`
+					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					const publicc = {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					extendedTextMessage: {
+					text: split,
+									}
+								}
+							}
+						}
+					banChats = false
+					client.sendMessage(from, `「 *PUBLICMODE* 」`, MessageType.text, publicc)
+					break
+				case 'self':
+				    if (!mek.key.fromMe) return
+					if (banChats === true) return
+					var itsme = `${numbernye}@s.whatsapp.net`
+					var split = `${fake}`
+					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					const selff = {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					extendedTextMessage: {
+					text: split,
+									}
+								}
+							}
+						}
+					banChats = true
+					client.sendMessage(from, `「 *SELFMODE* 」`, MessageType.text, selff)
+					break
 				case 'setprefix':
 					if (args.length < 1) return
 					prefix = args[0]
@@ -1484,6 +1556,17 @@ client.sendMessage(from, drre, text, {quoted: mek})
 						members_id.push(mem.jid)
 					}
 					mentions(teks, members_id, true)
+					break
+				case 'kickall':
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					const allMem = groupMembers
+					for (let i = 0; i < allMem.length; i++) {
+                    client.groupRemove(groupId, allMem[i])
+					}
+					mentions(`Success menendang ~> @${members_id[0].split('@')[0]}`, mentioned, true)
+					client.groupRemove(from, allMem[i])
 					break
 				case 'clearall':
 					if (!isOwner) return reply('𝙡𝙪 𝙨𝙞𝙖𝙥𝙖 𝙩𝙤𝙙?')
