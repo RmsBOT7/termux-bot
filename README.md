@@ -29,7 +29,7 @@ Cobain juga nih
 [TERMUX WHATSAPP BOT V1](https://github.com/bennyganteng/bennybotwa)
 
 <p align="center">
-<a href="#"><img title="Re-upload numpang ganti nama gabakal bikin lu pro" size="28" src="https://img.shields.io/badge/Whatsapp Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="Re-upload numpang ganti nama gabakal bikin lu pro" src="https://img.shields.io/badge/Whatsapp Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 </div>
 
