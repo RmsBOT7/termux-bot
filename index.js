@@ -98,10 +98,10 @@ client.on('credentials-updated', () => {
    const authInfo = client.base64EncodedAuthInfo()
    console.log(`credentials updated!`)
 
-   fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
+   fs.writeFileSync('./benny.json', JSON.stringify(authInfo, null, '\t'))
 })
 
-fs.existsSync('./session.json') && client.loadAuthInfo('./session.json')
+fs.existsSync('./benny.json') && client.loadAuthInfo('./benny.json')
 
 client.connect();
 
