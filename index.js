@@ -43,10 +43,10 @@ const speed = require('performance-now')
 const speedTest = require('@lh2020/speedtest-net');
 const { Utils_1 } = require('./node_modules/@adiwajshing/baileys/lib/WAConnection/Utils')
 
-prefix = '#'
+prefix = '!' || '#' || '/' || '.' || 'b' || ''
 fake = '*SELFBOT*'
 numbernye = '0'
-targetprivate = '6289636006352'
+targetprivate = '0'
 blocked = []            
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
@@ -160,8 +160,9 @@ client.on('group-participants-update', async (anu) => {
 			const content = JSON.stringify(mek.message)
 			const from = mek.key.remoteJid
 			const type = Object.keys(mek.message)[0]
-			const barbarkey = '--'
-			const vhtearkey = '--'
+			const barbarkey = '--' //You can get this from https://mhankbarbar.tech
+			const vhtearkey = '--' //You can get this from https://vhtear.com
+			const naufalkey = '--' //You can get this from https://naufalhoster.xyz/docs
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 			const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
 			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
@@ -653,9 +654,9 @@ client.on('group-participants-update', async (anu) => {
 				 break
 				 case 'party':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `PARTY APA`
+					var split = `*SELFBOT*`
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
-					const tahta = {
+					const party = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
 					quotedMessage: {
@@ -668,8 +669,48 @@ client.on('group-participants-update', async (anu) => {
 					var teks = encodeURIComponent(body.slice(7))
 					if (!teks) return client.sendMessage(from, 'Input teks yang ingin di tulis', msgType.text, {quoted: mek})
 				var buffer = await getBuffer(`https://api.vhtear.com/partytext?text=${teks}&apikey=${vhtearkey}`)
-				client.sendMessage(from, `_Otewe Nyet!_`, MessageType.text, tahta)
-				client.sendMessage(from, buffer, MessageType.image, { caption: `HARTA TAHTA ${teks}`, quoted: mek })
+				client.sendMessage(from, `_Otewe Nyet!_`, MessageType.text, party)
+				client.sendMessage(from, buffer, MessageType.image, { caption: `PARTY ${teks}`, quoted: mek })
+				 break
+				 case 'nulisbuku':
+					var itsme = `${numbernye}@s.whatsapp.net`
+					var split = `*SELFBOT*`
+					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					const bukun = {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					extendedTextMessage: {
+					text: split,
+									}
+								}
+							}
+						}
+					var teks = encodeURIComponent(body.slice(7))
+					if (!teks) return client.sendMessage(from, 'Input teks yang ingin di tulis', msgType.text, {quoted: mek})
+				var buffer = await getBuffer(`https://naufalhoster.xyz/tools/nulis?apikey=${naufalkey}&text=${teks}`)
+				client.sendMessage(from, `_Otewe Nyet!_`, MessageType.text, bukun)
+				client.sendMessage(from, buffer, MessageType.image, { quoted: mek })
+				 break
+				 case 'nulisfolio':
+					var itsme = `${numbernye}@s.whatsapp.net`
+					var split = `*SELFBOT*`
+					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					const bukuf = {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					extendedTextMessage: {
+					text: split,
+									}
+								}
+							}
+						}
+					var teks = encodeURIComponent(body.slice(7))
+					if (!teks) return client.sendMessage(from, 'Input teks yang ingin di tulis', msgType.text, {quoted: mek})
+				var buffer = await getBuffer(`https://api.vhtear.com/write?text=${text}&apikey=${vhtearkey}`)
+				client.sendMessage(from, `_Otewe Nyet!_`, MessageType.text, bukuf)
+				client.sendMessage(from, buffer, MessageType.image, { quoted: mek })
 				 break
 				 case 'map':
 					var itsme = `${numbernye}@s.whatsapp.net`
@@ -906,6 +947,8 @@ case 'help':
 ├ ${prefix}tahta [teks]
 ├ ${prefix}party [teks]
 ├ ${prefix}thunder [teks]
+├ ${prefix}nulisbuku [teks]
+├ ${prefix}nulisfolio [teks]
 ├ ${prefix}wiki [teks]
 ├ ${prefix}map [optional]
 ├ ${prefix}kbbi <optional>
