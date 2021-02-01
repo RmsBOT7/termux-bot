@@ -21,7 +21,6 @@ const
 const qrcode = require("qrcode-terminal")
 const moment = require("moment-timezone")
 const fs = require("fs")
-const canvas = require('discord-canvas')
 const { color, bgcolor } = require('./lib/color')
 const { help } = require('./lib/help')
 const { donasi } = require('./lib/donasi')
@@ -42,7 +41,6 @@ const audionye = JSON.parse(fs.readFileSync('./src/audio.json'))
 const imagenye = JSON.parse(fs.readFileSync('./src/image.json'))
 const speed = require('performance-now')
 const speedTest = require('@lh2020/speedtest-net');
-const settingan = fs.readFileSync('./lib/setting.json')
 const { Utils_1 } = require('./node_modules/@adiwajshing/baileys/lib/WAConnection/Utils')
 
 prefix = '#'
