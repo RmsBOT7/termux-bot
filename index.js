@@ -154,6 +154,7 @@ client.on('group-participants-update', async (anu) => {
 		try {
 			if (!mek.message) return
 			if (mek.key && mek.key.remoteJid == 'status@broadcast') return
+			if (!mek.key.fromMe) return
 			global.prefix
 			global.blocked
 			const content = JSON.stringify(mek.message)
@@ -705,7 +706,7 @@ client.on('group-participants-update', async (anu) => {
 								}
 							}
 						}
-					var teks = encodeURIComponent(body.slice(7))
+					var teks = encodeURIComponent(body.slice(11))
 					if (!teks) return client.sendMessage(from, 'Input teks yang ingin di tulis', msgType.text, {quoted: mek})
 				var buffer = await getBuffer(`https://naufalhoster.xyz/tools/nulis?apikey=${naufalkey}&text=${teks}`)
 				client.sendMessage(from, `_Otewe Nyet!_`, MessageType.text, bukun)
@@ -725,7 +726,7 @@ client.on('group-participants-update', async (anu) => {
 								}
 							}
 						}
-					var teks = encodeURIComponent(body.slice(7))
+					var teks = encodeURIComponent(body.slice(12))
 					if (!teks) return client.sendMessage(from, 'Input teks yang ingin di tulis', msgType.text, {quoted: mek})
 				var buffer = await getBuffer(`https://api.vhtear.com/write?text=${text}&apikey=${vhtearkey}`)
 				client.sendMessage(from, `_Otewe Nyet!_`, MessageType.text, bukuf)
