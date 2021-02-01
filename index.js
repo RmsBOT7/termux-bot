@@ -361,7 +361,7 @@ client.on('group-participants-update', async (anu) => {
 					axios.get(`https://masgi.herokuapp.com/api/cerpen`).then((res) => {
 						client.sendMessage(from, '[ WAIT ] Searching...⏳ silahkan tunggu', MessageType.text, cerpen)
 						let hasilnya = `Cerpen:\n${res.data}`;
-						client.sendMessage(from, hasil ,MessageType.text, cerpen);
+						client.sendMessage(from, hasilnya ,MessageType.text, cerpen);
 					})
 					break
 				case 'gcname':
