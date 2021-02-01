@@ -1007,7 +1007,9 @@ case 'help':
 ├ ${prefix}meme
 ├ ${prefix}brainly
 ├ ${prefix}truth
-├ ${prefix}dare
+├ ${prefix}cerpen
+├ ${prefix}cersex
+├ ${prefix}play <optional>
 ├ ${prefix}joox <optional>
 ├ ${prefix}play <optional>
 ├ ${prefix}pinterest <optional>
