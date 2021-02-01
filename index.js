@@ -344,6 +344,26 @@ client.on('group-participants-update', async (anu) => {
 						client.sendMessage(from, hasil ,MessageType.text, wimki);
 					})
 					break
+			     case 'cerpen':
+					var itsme = `${numbernye}@s.whatsapp.net`
+					var split = `*CERPEN*`
+					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					const cerpen = {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					extendedTextMessage: {
+					text: split,
+									}
+								}
+							}
+						}
+					axios.get(`https://masgi.herokuapp.com/api/cerpen`).then((res) => {
+						client.sendMessage(from, '[ WAIT ] Searching...⏳ silahkan tunggu', MessageType.text, cerpen)
+						let hasilnya = `Cerpen:\n${res.data}`;
+						client.sendMessage(from, hasil ,MessageType.text, cerpen);
+					})
+					break
 				case 'gcname':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
