@@ -559,6 +559,24 @@ client.on('group-participants-update', async (anu) => {
 					tod = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, tod, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
 					break
+				case 'cersex':
+				    var itsme = `${numbernye}@s.whatsapp.net`
+				    var split = `*Searching cerita sex!*`
+					var selepbot = {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					extendedTextMessage: {
+					text: split,
+									}
+								}
+							}
+						}
+					cers = await fetchJson(`https://api.vhtear.com/cerita_sex&apikey=${vhtearkey}`, {method: 'get'})
+					buffer = await getBuffer(cers.result.image)
+					client.sendMessage(from, '_*Otewe bang!*_', MessageType.text, selepbot)
+					client.sendMessage(from, buffer, MessageType.image, { caption: cers.result.cerita, quoted: mek })
+					break
 				case 'setreply':
 					if (args.length < 1) return
 					fake = body.slice(10)
@@ -1481,6 +1499,11 @@ case 'ocr':
 					if (args.length < 1) return
 					prefix = args[0]
 					reply(`𝗣𝗿𝗲𝗳𝗶𝘅 𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗱𝗶 𝘂𝗯𝗮𝗵 𝗺𝗲𝗻𝗷𝗮𝗱𝗶 : ${prefix}`)
+					break
+				case 'join':
+					if (args.length < 1) return
+					client.joinGroup(body.slice(6))
+					reply(`Otw Join Gan!`)
 					break
 				case 'meme':
 					meme = await kagApi.memes()
