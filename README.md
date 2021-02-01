@@ -29,8 +29,9 @@ Cobain juga nih
 [WHATSAPP BOT CMD](https://github.com/bennyganteng/bennybotwa)
 
 <p align="center">
-<a href="#"><img title="Re-upload numpang ganti nama gabakal bikin lu pro" src="https://img.shields.io/badge/Reupload numpang ganti nama gabakal bikin lu pro-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge">(https://wa.me/6289636006352)</a>
+<a href="#"><img title="Re-upload numpang ganti nama gabakal bikin lu pro" src="https://img.shields.io/badge/Reupload numpang ganti nama gabakal bikin lu pro-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
+[BENNY](https://wa.me/6289636006352)
 </div>
 
 * "Wahai orang-orang yang beriman, mengapakah kamu mengatakan sesuatu yang tidak kamu kerjakan?, Amat besar kebencian di sisi Allah bahwa kamu mengatakan apa-apa yang tidak kamu kerjakan."
