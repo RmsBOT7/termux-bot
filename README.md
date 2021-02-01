@@ -22,13 +22,14 @@
 # Termux whatsapp bot V.2
 
 Cobain juga nih
-
 [WHATSAPP BOT CMD](https://github.com/bennyganteng/bennybotwa)
+
+CONTACT ME
+[WhatsApp](https://wa.me/6289636006352)
 
 <p align="center">
 <a href="#"><img title="Re-upload numpang ganti nama gabakal bikin lu pro" src="https://img.shields.io/badge/Reupload numpang ganti nama gabakal bikin lu pro-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
-[BENNY](https://wa.me/6289636006352)
 </div>
 
 * "Wahai orang-orang yang beriman, mengapakah kamu mengatakan sesuatu yang tidak kamu kerjakan?, Amat besar kebencian di sisi Allah bahwa kamu mengatakan apa-apa yang tidak kamu kerjakan."
@@ -320,8 +321,8 @@ Download [Disini](https://play.google.com/store/apps/details?id=com.foxdebug.aco
 * Kalau nomor diatas gak aktif mungkin kebanned :(
 
 ## Partnership
-* [`NazwaS`](https://github.com/NazwaS/NazwaS)
-* [`re-Destro`](https://github.com/re-Destro)
+* [`Rizky`](https://github.com/itsmeikybot/ITSMEIKYB0T)
+* [`Zefian`](https://github.com/ZefianAlfian/zefbot)
 
 ## Terimakasih untuk
 * [`Fdciabdul`](https://github.com/fdciabdul)
