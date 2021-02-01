@@ -132,11 +132,11 @@ Custom di sini [SETTING](https://github.com/bennyganteng/termux-bot/blob/master/
 
 • Klik edit
 
-<img alt="ARELBOT" src ="https://user-images.githubusercontent.com/72728486/104452742-00388b00-55d6-11eb-9521-2ec9bf9fc07a.jpg" width="320">
+<img alt="BENNYBOT" src ="https://user-images.githubusercontent.com/72728486/104452742-00388b00-55d6-11eb-9521-2ec9bf9fc07a.jpg" width="320">
 
  **Bagian bagian yang perlu di edit yang berwarna Ungu**
 
-   <img alt="ARELBOT" src ="https://user-images.githubusercontent.com/72728486/104451377-0a598a00-55d4-11eb-8d84-1ec950793b8f.jpg" width="480">
+   <img alt="BENNYBOT" src ="https://user-images.githubusercontent.com/72728486/104451377-0a598a00-55d4-11eb-8d84-1ec950793b8f.jpg" width="480">
 
  **Jika sudah klik save dan dan keluar dari menu mc ketik**
 
