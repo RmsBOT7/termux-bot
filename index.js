@@ -952,7 +952,7 @@ case 'help':
 
 ◪ *INFO*
   ❏ Ver: Baileys
-  ❏ Prefix: 「  #  」
+  ❏ Prefix: 「  `${prefix}`  」
   ❏ Creator: Nama
 
 ◪ 𝐆𝐑𝐎𝐔𝐏
