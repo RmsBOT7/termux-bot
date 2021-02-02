@@ -247,17 +247,7 @@ client.on('group-participants-update', async (anu) => {
 ┣━━━━━━━━━━━━━━━━━━━━
 ┃ _*POWERED BY BENNY*_
 ┗━━━━━━━━━━━━━━━━━━━━`
-					const domnate = {
-					contextInfo: {
-					participant: '0@s.whatsapp.net',
-					quotedMessage: {
-					extendedTextMessage: {
-					text: split,
-									}
-								}
-							}
-						}
-				    client.sendMessage(from, donat, MessageType.text, domnate)
+                    client.sendMessage(from, `${donat}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
 					break
 				case 'hidetag':
 					members_id = []
@@ -539,9 +529,9 @@ client.on('group-participants-update', async (anu) => {
 						case 'ytmp4':
 							if (args.length < 1) return reply('Urlnya mana um?')
 							if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-							anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv?url=${args[0]}`, {method: 'get'})
+							anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
 							if (anu.error) return reply(anu.error)
-							teks = `*Title* : ${anu.title}\n*Filesize* : ${anu.filesize}`
+							teks = `*Title* : ${anu.title}\n*Mohon tunggu sebentar video sedang di download!*`
 							thumb = await getBuffer(anu.thumb)
 							client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 							buffer = await getBuffer(anu.result)
@@ -958,7 +948,115 @@ case 'help':
 	teks = `${kyun(runtime)}`
 	var itsme = `${numbernye}@s.whatsapp.net`
 	var split = `${fake}`
-	// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+	menunye = `		「 *𝐒𝐄𝐋𝐅𝐁𝐎𝐓 - 𝐖𝐀* 」
+
+◪ *INFO*
+  ❏ Ver: Baileys
+  ❏ Prefix: 「  #  」
+  ❏ Creator: Nama
+
+◪ 𝐆𝐑𝐎𝐔𝐏
+  │
+  ├─ ❏ ${prefix}hidetag1 <text>
+  ├─ ❏ ${prefix}hidetag2 <text>
+  ├─ ❏ ${prefix}grup close|open
+  ├─ ❏ ${prefix}gcname <text>
+  ├─ ❏ ${prefix}gcdesk <text>
+  ├─ ❏ ${prefix}add 62xxx
+  ├─ ❏ ${prefix}kick 62xx
+  ├─ ❏${prefix}kickall
+  ├─ ❏ ${prefix}demote @tag
+  ├─ ❏ ${prefix}promote @tag
+  ├─ ❏ ${prefix}tagall
+  ├─ ❏ ${prefix}ownergc
+  ├─ ❏ ${prefix}ingfogc
+  └─ ❏ ${prefix}leave
+
+◪ 𝐀𝐍𝐈𝐌𝐄
+  │
+  ├─ ❏ ${prefix}loli
+  ├─ ❏ ${prefix}nsfwblowjob
+  ├─ ❏ ${prefix}nsfwneko
+  ├─ ❏ ${prefix}nsfwtrap
+  ├─ ❏ ${prefix}neko
+  ├─ ❏ ${prefix}otakulast
+  ├─ ❏ ${prefix}waifu
+  ├─ ❏ ${prefix}randomhentai
+  └─ ❏ ${prefix}shota
+  
+  ◪ 𝐌𝐄𝐃𝐈𝐀
+  │
+  ├─ ❏ ${prefix}ssweb <linknya>
+  ├─ ❏ ${prefix}tomp3 <reply video>
+  ├─ ❏ ${prefix}meme
+  ├─ ❏ ${prefix}brainly
+  ├─ ❏ ${prefix}truth
+  ├─ ❏ ${prefix}dare
+  ├─ ❏ ${prefix}joox <optional>
+  ├─ ❏ ${prefix}play <optional>
+  ├─ ❏ ${prefix}ytmp4 <linknya>
+  ├─ ❏ ${prefix}pinterest <optional>
+  ├─ ❏ ${prefix}logowolf [teks]
+  ├─ ❏ ${prefix}tahta [teks]
+  ├─ ❏ ${prefix}thunder [teks]
+  ├─ ❏ ${prefix}party [teks]
+  ├─ ❏ ${prefix}nulisbuku [teks]
+  ├─ ❏ ${prefix}nulisfolio [teks]
+  ├─ ❏ ${prefix}wiki [teks]
+  ├─ ❏ ${prefix}map [optional]
+  ├─ ❏ ${prefix}kbbi <optional>
+  ├─ ❏ ${prefix}tinyurl <link>
+  └─ ❏ ${prefix}howak
+
+  ◪ 𝐓𝐎𝐎𝐋𝐒
+  │
+  ├─ ❏ ${prefix}addsticker <optional>
+  ├─ ❏ ${prefix}getsticker <optional>
+  ├─ ❏ ${prefix}stickerlist
+  ├─ ❏ ${prefix}addvn <optional>
+  ├─ ❏ ${prefix}getvn <optional>
+  ├─ ❏ ${prefix}listvn
+  ├─ ❏ ${prefix}addvideo <optional>
+  ├─ ❏ ${prefix}getvideo <optional>
+  ├─ ❏ ${prefix}listvideo
+  ├─ ❏ ${prefix}addimage <optional>
+  ├─ ❏ ${prefix}getimage <optional>
+  ├─ ❏ ${prefix}listimage
+  ├─ ❏ ${prefix}sticker
+  └─ ❏ ${prefix}toimg
+ 
+  ◪ 𝐎𝐓𝐇𝐄𝐑
+  │
+  ├─ ❏ ${prefix}antidelete ctaktif
+  ├─ ❏ ${prefix}antidelete ctmati
+  ├─ ❏ ${prefix}antidelete aktif
+  ├─ ❏ ${prefix}antidelete mati
+  ├─ ❏ ${prefix}antidelete banct 628xxx
+  ├─ ❏ ${prefix}returnmek
+  ├─ ❏ ${prefix}readmore text|text
+  ├─ ❏ ${prefix}payment
+  ├─ ❏ ${prefix}cr1 @tag text|text
+  ├─ ❏ ${prefix}cr2 <versi private>
+  ├─ ❏ ${prefix}hidetag1 <text>
+  ├─ ❏ ${prefix}hidetag2 <text>
+  ├─ ❏ ${prefix}runtime
+  ├─ ❏ ${prefix}settarget
+  ├─ ❏ ${prefix}setprefix  
+  ├─ ❏ ${prefix}public 
+  ├─ ❏ ${prefix}self
+  ├─ ❏ ${prefix}status
+  ├─ ❏ ${prefix}term <exec>
+  ├─ ❏ ${prefix}ping
+  ├─ ❏ ${prefix}setreply
+  ├─ ❏ ${prefix}setnumber
+  ├─ ❏ ${prefix}info
+  ├─ ❏ ${prefix}block <@member>
+  ├─ ❏ ${prefix}unblock <@member>
+  ├─ ❏ ${prefix}blocklist
+  ├─ ❏ ${prefix}tagme
+  └─ ❏ ${prefix}cekchat
+
+		「 *𝐒𝐄𝐋𝐅𝐁𝐎𝐓 - 𝐖𝐀* 」`
 	const bruhhhh = {
 	contextInfo: {
 	participant: '0@s.whatsapp.net',
@@ -969,96 +1067,7 @@ case 'help':
 		   }
 	    }
 	}
-	client.sendMessage(from, `┌──「 *MAIN-MENU* 」
-│
-├「 *GRUP-MENU* 」
-│
-├ ${prefix}hidetag1 <text>
-├ ${prefix}hidetag2 <text>
-├ ${prefix}grup close|open
-├ ${prefix}gcname <text>
-├ ${prefix}gcdesk <text>
-├ ${prefix}add 62xxx
-├ ${prefix}kick 62xx
-├ ${prefix}kickall
-├ ${prefix}demote @tag
-├ ${prefix}promote @tag
-├ ${prefix}tagall
-├ ${prefix}ownergc
-├ ${prefix}ingfogc
-├ ${prefix}leave
-│
-├「 *ANIME-MENU* 」
-│
-├ ${prefix}randomhentai
-├ ${prefix}nsfwblowjob
-├ ${prefix}nsfwneko
-├ ${prefix}nsfwtrap
-├ ${prefix}loli
-├ ${prefix}shota
-├ ${prefix}neko
-├ ${prefix}otakulast
-├ ${prefix}waifu
-│
-├「 *MEDIA-MENU* 」
-│
-├ ${prefix}ssweb <linknya>
-├ ${prefix}tomp3 <reply video>
-├ ${prefix}meme
-├ ${prefix}brainly
-├ ${prefix}truth
-├ ${prefix}cerpen
-├ ${prefix}cersex
-├ ${prefix}play <optional>
-├ ${prefix}joox <optional>
-├ ${prefix}play <optional>
-├ ${prefix}pinterest <optional>
-├ ${prefix}logowolf [teks]
-├ ${prefix}tahta [teks]
-├ ${prefix}party [teks]
-├ ${prefix}thunder [teks]
-├ ${prefix}nulisbuku [teks]
-├ ${prefix}nulisfolio [teks]
-├ ${prefix}wiki [teks]
-├ ${prefix}map [optional]
-├ ${prefix}kbbi <optional>
-├ ${prefix}tinyurl <link>
-├ ${prefix}howak
-│
-├「 *STORAGE-MENU* 」
-│
-├ ${prefix}addsticker <optional>
-├ ${prefix}getsticker <optional>
-├ ${prefix}stickerlist
-├ ${prefix}addvn <optional>
-├ ${prefix}getvn <optional>
-├ ${prefix}listvn
-├ ${prefix}addvideo <optional>
-├ ${prefix}getvideo <optional>
-├ ${prefix}listvideo
-├ ${prefix}addimage <optional>
-├ ${prefix}getimage <optional>
-├ ${prefix}listimage
-├ ${prefix}sticker
-├ ${prefix}toimg
-│
-├「 *ADVANCE-MENU* 」
-│
-├ ${prefix}payment
-├ ${prefix}self [private bot]
-├ ${prefix}public [public bot]
-├ ${prefix}cr1 @tag text|text
-├ ${prefix}cr2 <versi private>
-├ ${prefix}runtime
-├ ${prefix}settarget
-├ ${prefix}term <exec>
-├ ${prefix}ping
-├ ${prefix}setreply
-├ ${prefix}setnumber
-├ ${prefix}info
-├ ${prefix}cekchat
-│
-└──「 *SELF-BOT* 」`, MessageType.text, bruhhhh)
+	client.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
 	break
 case 'tomp3':
     client.updatePresence(from, Presence.composing) 
@@ -1476,7 +1485,7 @@ case 'ocr':
 							}
 						}
 					banChats = false
-					client.sendMessage(from, `「 *PUBLICMODE* 」`, MessageType.text, publicc)
+					client.sendMessage(from, `「 *PUBLICMODE* 」`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
 					break
 				case 'self':
 				    if (!mek.key.fromMe) return
@@ -1495,12 +1504,17 @@ case 'ocr':
 							}
 						}
 					banChats = true
-					client.sendMessage(from, `「 *SELFMODE* 」`, MessageType.text, selff)
+					client.sendMessage(from, `「 *SELFMODE* 」`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
 					break
+				case 'status':
+				    var itsme = `${numbernye}@s.whatsapp.net`
+				    var split = `_*SELFMODE Status*_`
+				    client.sendMessage(from, `「 *SELFMODE* 」 *Status:* ${banChats}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
+			        break
 				case 'setprefix':
 					if (args.length < 1) return
 					prefix = args[0]
-					reply(`𝗣𝗿𝗲𝗳𝗶𝘅 𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗱𝗶 𝘂𝗯𝗮𝗵 𝗺𝗲𝗻𝗷𝗮𝗱𝗶 : ${prefix}`)
+					client.sendMessage(from, `Prefix berhasil di ubah menjadi : ${prefix}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
 					break
 				case 'join':
 					if (args.length < 1) return
