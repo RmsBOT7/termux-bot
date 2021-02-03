@@ -1,7 +1,3 @@
-/*
-* Thanks For 𝗠𝗵𝗮𝗻𝗸𝗕𝗮𝗿𝗕𝗮𝗿
-*/
-
 const
 {
    WAConnection,
@@ -63,7 +59,7 @@ function kyun(seconds){
   var seconds = Math.floor(seconds % 60);
 
   //return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds)
-  return `-[ 𝙍𝙐𝙉𝙏𝙄𝙈𝙀 ]-\n${pad(hours)}H ${pad(minutes)}M ${pad(seconds)}S`
+  return `-[ _*RUNTIME*_ ]-\n${pad(hours)}H ${pad(minutes)}M ${pad(seconds)}S`
 }
 
 function clamp(value, min, max) {
@@ -124,7 +120,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Hallo @${num.split('@')[0]}\nWelcome to group *${mdata.subject}* Jangan lupa intro kau!...Betah-betah yah di sini🖤`
+				teks = `Hallo @${num.split('@')[0]}\nWelcome to group *${mdata.subject}* Jangan lupa intro kau!...Betah-betah yah di sini??`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, ppimg, MessageType.image, {caption: teks})
 			} else if (anu.action == 'remove') {
@@ -134,7 +130,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Sayonara🥳 @${num.split('@')[0]} Al-fatihah buat yang left/terkick!.`
+				teks = `Sayonara?? @${num.split('@')[0]} Al-fatihah buat yang left/terkick!.`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, ppimg, MessageType.image, {caption: teks})
 			}
@@ -195,7 +191,7 @@ client.on('message-update', async (ben) => {
 			const mediaData = int.type === 'extendedTextMessage' ? JSON.parse(JSON.stringify(int.data).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : int.data
 			var itsme = `${numbernye}@s.whatsapp.net`
 				var split = `${fake}`
-				// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+				// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 				var selepbot72 = {
 					contextInfo: {
 						participant: itsme,
@@ -216,7 +212,7 @@ client.on('message-update', async (ben) => {
 - *Tanggal :* *${moment.unix(int.timestamp).format('DD/MM/YYYY')}*
 - *Pesan :* *${body ? body : '-'}*`
 				client.sendMessage(from, strConversation, MessageType.text, selepbot72)
-			} else if (int.type == 'stickerMessage') {
+				} else if (int.type == 'stickerMessage') {
 				var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
 					const pingbro23 = {
@@ -279,85 +275,93 @@ client.on('message-update', async (ben) => {
 	}
 })
 
-	client.on('message-new', async (mek) => {
-		try {
-			if (!mek.message) return
-			if (mek.key && mek.key.remoteJid == 'status@broadcast') return
-			if (!mek.key.fromMe && banChats === true) return
-			global.prefix
-			global.blocked
-			const content = JSON.stringify(mek.message)
-			const from = mek.key.remoteJid
-			const type = Object.keys(mek.message)[0]
-			const barbarkey = '--' //You can get this from https://mhankbarbar.tech
-			const vhtearkey = '--' //You can get this from https://vhtear.com
-			const naufalkey = '--' //You can get this from https://naufalhoster.xyz/docs
-			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
-			const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
-			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
-			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
-			const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
-			const args = body.trim().split(/ +/).slice(1)
-			const isCmd = body.startsWith(prefix)
+client.on('message-new', async (ben) => {
+	try {
+		if (!ben.message) return
+		if (ben.key && ben.key.remoteJid == 'status@broadcast') return
+		let infoMSG = JSON.parse(fs.readFileSync('./src/.dat/msg.data.json'))
+		infoMSG.push(JSON.parse(JSON.stringify(ben)))
+		fs.writeFileSync('./src/.dat/msg.data.json', JSON.stringify(infoMSG, null, 2))
+		const urutan_pesan = infoMSG.length
+		if (urutan_pesan === 5000) {
+			infoMSG.splice(0, 4300)
+			fs.writeFileSync('./src/.dat/msg.data.json', JSON.stringify(infoMSG, null, 2))
+		}
+		global.prefix
+		global.blocked
+		const content = JSON.stringify(ben.message)
+		const from = ben.key.remoteJid
+		const type = Object.keys(ben.message)[0]
+		const barbarkey = '--'
+		const naufalkey = '--'
+		const vhtearkey = '--'
+		const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
+		const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
+		body = (type === 'conversation' && ben.message.conversation.startsWith(prefix)) ? ben.message.conversation : (type == 'imageMessage') && ben.message.imageMessage.caption.startsWith(prefix) ? ben.message.imageMessage.caption : (type == 'videoMessage') && ben.message.videoMessage.caption.startsWith(prefix) ? ben.message.videoMessage.caption : (type == 'extendedTextMessage') && ben.message.extendedTextMessage.text.startsWith(prefix) ? ben.message.extendedTextMessage.text : ''
+		budy = (type === 'conversation') ? ben.message.conversation : (type === 'extendedTextMessage') ? ben.message.extendedTextMessage.text : ''
+		const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
+		const args = body.trim().split(/ +/).slice(1)
+		const isCmd = body.startsWith(prefix)
+		
 
-			mess = {
-				wait: '_Otewe bang_',
-				success: 'Berhasil!',
-				notDaftar: `Hai ${mek} Nomor kamu berlum terdaftar di database! \nSilahkan ketik *#daftar* untuk mendaftarkan nomor anda!`,
-				error: {
-					stick: 'Itu video gblk!',
-					Iv: 'Linknya mokad:v'
-				},
-				only: {
-					group: 'Grup only bruh...',
-					ownerG: 'Owner grup only bruh...',
-					ownerB: 'Lu siapa?',
-					admin: 'Mimin grup only bruh...',
-					Badmin: 'Jadiin gw admin dlu su!'
-				}
+		mess = {
+			wait: 'Otewe Bang',
+			success: 'Berhasil!',
+			error: {
+				stick: 'Itu video gblk!',
+				Iv: 'Linknya mokad:v'
+			},
+			only: {
+				group: 'Grup only bruh...',
+				ownerG: 'Owner grup only bruh...',
+				ownerB: 'Lu siapa?',
+				admin: 'Mimin grup only bruh...',
+				Badmin: 'Jadiin gw admin dlu su!'
 			}
+		}
 
-			const botNumber = client.user.jid
-			const ownerNumber = '6289636006352@s.whatsapp.net' // ganti nomer lu
-			const isGroup = from.endsWith('@g.us')
-			const sender = isGroup ? mek.participant : mek.key.remoteJid
-			const totalchat = await client.chats.all()
-			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
-			const groupName = isGroup ? groupMetadata.subject : ''
-			const groupId = isGroup ? groupMetadata.jid : ''
-			const groupMembers = isGroup ? groupMetadata.participants : ''
-			const groupDesc = isGroup ? groupMetadata.desc : ''
-			const groupOwner = isGroup ? groupMetadata.owner : ''
-			const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
-			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
-			const isGroupAdmins = groupAdmins.includes(sender) || false
-			const isWelkom = isGroup ? welkom.includes(from) : false
-			const isNsfw = isGroup ? nsfw.includes(from) : false
-			const isSimi = isGroup ? samih.includes(from) : false
-			const isOwner = ownerNumber.includes(sender)
-			const isUrl = (url) => {
-			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
-			}
-			const reply = (teks) => {
-				client.sendMessage(from, teks, text, {quoted:mek})
-			}
-			const sendMess = (hehe, teks) => {
-				client.sendMessage(hehe, teks, text)
-			}
-			const mentions = (teks, memberr, id) => {
-				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
-			}
+		const botNumber = client.user.jid
+		const ownerNumber = ["6289636006352@s.whatsapp.net"] // ganti nomer lu
+		const isGroup = from.endsWith('@g.us')
+		const sender = isGroup ? ben.participant : ben.key.remoteJid
+		const totalchat = await client.chats.all()
+		const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
+		const groupName = isGroup ? groupMetadata.subject : ''
+		const groupId = isGroup ? groupMetadata.jid : ''
+		const groupMembers = isGroup ? groupMetadata.participants : ''
+		const groupDesc = isGroup ? groupMetadata.desc : ''
+		const groupOwner = isGroup ? groupMetadata.owner : ''
+		const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
+		const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
+		const isGroupAdmins = groupAdmins.includes(sender) || false
+		const isWelkom = isGroup ? welkom.includes(from) : false
+		const isNsfw = isGroup ? nsfw.includes(from) : false
+		const isSimi = isGroup ? samih.includes(from) : false
+		const isOwner = ownerNumber.includes(sender)
+		const isUrl = (url) => {
+			return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%.+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%+.~#?&/=]*)/, 'gi'))
+		}
+		const reply = (teks) => {
+			client.sendMessage(from, teks, text, { quoted: ben })
+		}
+		const sendMess = (hehe, teks) => {
+			client.sendMessage(hehe, teks, text)
+		}
+		const mentions = (teks, memberr, id) => {
+			(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, { contextInfo: { "mentionedJid": memberr } }) : client.sendMessage(from, teks.trim(), extendedText, { quoted: ben, contextInfo: { "mentionedJid": memberr } })
+		}
 
-			colors = ['red','white','black','blue','yellow','green']
-			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
-			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
-			const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
-			const isQuotedAudio = type === 'extendedTextMessage' && content.includes('audioMessage')
-			const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
-			if (!isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
-			if (!isGroup && !isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
-			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
-			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
+		colors = ['red', 'white', 'black', 'blue', 'yellow', 'green']
+		const isMedia = (type === 'imageMessage' || type === 'videoMessage')
+		const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
+		const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
+		const isQuotedAudio = type === 'extendedTextMessage' && content.includes('audioMessage')
+		const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
+		if (!isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
+		if (!isGroup && !isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
+		if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
+		if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
+		if (!ben.key.fromMe && banChats === true) return
 			switch(command) {
 				case 'donasi':
 				case 'donate':
@@ -375,7 +379,7 @@ client.on('message-update', async (ben) => {
 ┣━━━━━━━━━━━━━━━━━━━━
 ┃ _*POWERED BY BENNY*_
 ┗━━━━━━━━━━━━━━━━━━━━`
-                    client.sendMessage(from, `${donat}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
+                    client.sendMessage(from, `${donat}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "*_TERIMAKASIH SUDAH MAU DONASI_*", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
 					break
 				case 'hidetag':
 					members_id = []
@@ -1343,9 +1347,8 @@ case 'ssweb':
 	if (args.length < 1) return reply('Urlnya mana om')
 	teks = body.slice(7)
 	reply(mess.wait)
-	anu = await fetchJson(`https://mnazria.herokuapp.com/api/screenshotweb?url=${teks}`)
-	buff = await getBuffer(anu.gambar)
-	client.sendMessage(from, buff, image, {caption: `Result : ${teks}`, quoted: mek})
+	anu = await getBuffer(`https://api.vhtear.com/ssweb?link=${teks}&type=phone&apikey=${vhtearkey}`)
+	client.sendMessage(from, anu, image, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
 	break
 case 'chatlist':
 case 'cekchat':
@@ -1367,7 +1370,7 @@ case 'cekchat':
 	//teks += `~> @${totalchat}\n`
 	//}
 	teks = `Total : ${totalchat.length}`
-	client.sendMessage(from, teks, MessageType.text, selepbot)
+	client.sendMessage(from, teks, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
 	break
 case 'speed':
 case 'ping':
