@@ -392,7 +392,7 @@ client.on('message-new', async (ben) => {
 				case 'shota':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					var selepbot = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -456,7 +456,7 @@ client.on('message-new', async (ben) => {
 				case 'grup':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const groupp = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -479,7 +479,7 @@ client.on('message-new', async (ben) => {
 				case 'wiki':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `*𝐖𝐈𝐊𝐈*`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const wimki = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -500,7 +500,7 @@ client.on('message-new', async (ben) => {
 			     case 'cerpen':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `*CERPEN*`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const cerpen = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -520,7 +520,7 @@ client.on('message-new', async (ben) => {
 				case 'gcname':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const gcname = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -537,7 +537,7 @@ client.on('message-new', async (ben) => {
 				case 'gcdesk':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const gcdesk = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -555,7 +555,7 @@ client.on('message-new', async (ben) => {
 					const tinyurl = body.slice(9)
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const srotlink = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -712,7 +712,7 @@ client.on('message-new', async (ben) => {
 				case 'cr1':
 						// licensed by aex-bot -> namabotnte
 				var split = args.join(' ').replace(/@|\d/gi, '').split('|')
-				var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+				var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 				const target = {
 				contextInfo: {
 				participant: taged,
@@ -733,7 +733,7 @@ client.on('message-new', async (ben) => {
 				case 'cr2':
 					jids = `${targetprivate}@s.whatsapp.net` // nomer target
 					var split = args.join(' ').replace(/@|\d/gi, '').split('|')
-					var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const options = {
 					contextInfo: {
 					quotedMessage: {
@@ -749,7 +749,7 @@ client.on('message-new', async (ben) => {
 					case 'kbbi':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const kbbigan = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -770,7 +770,7 @@ client.on('message-new', async (ben) => {
 				case 'linkgc':
 				var itsme = `${numbernye}@s.whatsapp.net`
 				var split = `${fake}`
-						// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+						// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 						const linkgcgan = {
 						contextInfo: {
 						participant: '0@s.whatsapp.net',
@@ -824,7 +824,7 @@ client.on('message-new', async (ben) => {
 				 case 'tahta':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `𝙃𝘼𝙍𝙏𝘼 𝙏𝘼𝙃𝙏𝘼 𝘼𝙋𝘼`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const tahta = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -844,7 +844,7 @@ client.on('message-new', async (ben) => {
 				 case 'party':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `*SELFBOT*`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const party = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -864,7 +864,7 @@ client.on('message-new', async (ben) => {
 				 case 'nulisbuku':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `*SELFBOT*`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const bukun = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -884,7 +884,7 @@ client.on('message-new', async (ben) => {
 				 case 'nulisfolio':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `*SELFBOT*`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const bukuf = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -929,7 +929,7 @@ client.on('message-new', async (ben) => {
 				 case 'thunder':
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const thunder = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -1053,7 +1053,7 @@ case 'animehuggif':
 case 'waifu':
 	var itsme = `${numbernye}@s.whatsapp.net`
 	var split = `${fake}`
-	// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+	// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 	var selepbot = {
 	contextInfo: {
 	participant: '0@s.whatsapp.net',
@@ -1467,7 +1467,7 @@ case 'blocklist':
 	client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
 	break
 case 'ocr': 
-	if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+	if ((isMedia && !ben.message.videoMessage || isQuotedImage) && args.length == 0) {
 	const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 	const media = await client.downloadAndSaveMediaMessage(encmedia)
 	reply(mess.wait)
@@ -1487,7 +1487,7 @@ case 'ocr':
 					case 's':
 					case 'stiker':
 					case 'sticker':
-						if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+						if ((isMedia && !ben.message.videoMessage || isQuotedImage) && args.length == 0) {
 							const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 							const media = await client.downloadAndSaveMediaMessage(encmedia)
 							ran = getRandom('.webp')
@@ -1510,7 +1510,7 @@ case 'ocr':
 								.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
 								.toFormat('webp')
 								.save(ran)
-						} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
+						} else if ((isMedia && ben.message.videoMessage.seconds < 11 || isQuotedVideo && ben.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
 							const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 							const media = await client.downloadAndSaveMediaMessage(encmedia)
 							ran = getRandom('.webp')
@@ -1600,11 +1600,11 @@ case 'ocr':
 					})
 					break
 				case 'public':
-				    if (!mek.key.fromMe) return
+				    if (!ben.key.fromMe) return
 					if (banChats === false) return
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const publicc = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -1619,11 +1619,11 @@ case 'ocr':
 					client.sendMessage(from, `「 *PUBLICMODE* 」`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SELFBOT - BEN*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
 					break
 				case 'self':
-				    if (!mek.key.fromMe) return
+				    if (!ben.key.fromMe) return
 					if (banChats === true) return
 					var itsme = `${numbernye}@s.whatsapp.net`
 					var split = `${fake}`
-					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const selff = {
 					contextInfo: {
 					participant: '0@s.whatsapp.net',
@@ -1706,7 +1706,7 @@ client.sendMessage(from, drre, text, {quoted: mek})
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
 					break
                                 case 'tagme':
-					var nom = mek.participant
+					var nom = ben.participant
 					const tag = {
 					text: `@${nom.split("@s.whatsapp.net")[0]} Ku tag kau sayang❤️🗿!`,
 					contextInfo: { mentionedJid: [nom] }
@@ -1767,7 +1767,7 @@ client.sendMessage(from, drre, text, {quoted: mek})
 					if (!isOwner) return reply('𝙡𝙪 𝙨𝙞𝙖𝙥𝙖 𝙩𝙤𝙙?') 
 					if (args.length < 1) return reply('.......')
 					anu = await client.chats.all()
-					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+					if (isMedia && !ben.message.videoMessage || isQuotedImage) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await client.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
@@ -1797,8 +1797,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
 									   case 'kick':
 											if (!isGroup) return reply(mess.only.group)
 											if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-											if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
-											mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+											if (ben.message.extendedTextMessage === undefined || ben.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
+											mentioned = ben.message.extendedTextMessage.contextInfo.mentionedJid
 											if (mentioned.length > 1) {
 											teks = 'Perintah di terima, Menendang\n'
 											for (let _ of mentioned) {
@@ -1814,8 +1814,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
 											case 'promote':
 												if (!isGroup) return reply(mess.only.group)
 												if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-												if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
-												mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+												if (ben.message.extendedTextMessage === undefined || ben.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
+												mentioned = ben.message.extendedTextMessage.contextInfo.mentionedJid
 												if (mentioned.length > 1) {
 												teks = 'Perintah di terima, Promote :\n'
 												for (let _ of mentioned) {
@@ -1831,8 +1831,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
 											case 'demote':
 												if (!isGroup) return reply(mess.only.group)
 												if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-												if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
-												mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+												if (ben.message.extendedTextMessage === undefined || ben.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
+												mentioned = ben.message.extendedTextMessage.contextInfo.mentionedJid
 												if (mentioned.length > 1) {
 												teks = 'Perintah di terima, Demote :\n'
 												for (let _ of mentioned) {
@@ -1874,8 +1874,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
 					teks = body.slice(5)
 					anu = await fetchJson(`https://st4rz.herokuapp.com/api/simsimi?kata=${teks}`, {method: 'get'})
 					if (anu.error) return reply('Simi ga tau kak')
-					reply(anu)
-					break
+					client.sendMessage(from, `${anu.result}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_*SimSimi*_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABERERESERMVFRMaHBkcGiYjICAjJjoqLSotKjpYN0A3N0A3WE5fTUhNX06MbmJiboyiiIGIosWwsMX46/j///8BERERERIRExUVExocGRwaJiMgICMmOiotKi0qOlg3QDc3QDdYTl9NSE1fToxuYmJujKKIgYiixbCwxfjr+P/////CABEIADoAUQMBIgACEQEDEQH/xAAsAAEAAwEBAQAAAAAAAAAAAAAAAgMFBAYBAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAADwYAAAAAEo2EoeggYctbsPMX7XIZPycABZWNvLoHTfnjTo4x0c4AAAAAAAf//EAC0QAAMAAgEDAwIDCQAAAAAAAAECAwQRAAUSMRMhImGSFCCRJEBBQlBRUmOx/9oACAEBAAE/AP3dFLsqjW2IA2QB+p5PHvUoJxdy7FU7VJ7iPcgcM6AMxRtKwVjrwT4B4Y2Hdub/ABRXb28K2tE/Q74+Nead7yZV+BHcNbDglSPodcKsp0wIOgf14mLeisyKCFAJII/ipf8A4vCrKFJBAYbH1Hj8kXWdFdpJUD+RywB+0g8z8N4dXtiQgHxlo5STuyy2qbbmXTHxhjt2SZ6I4yISuzy/17IZudWImmKoT0bvH9pkHc+DpAQxbma/bTqUE2hwEAlUO/eQjiXMARsnTUvAX/EZxgS7vtUQIAF03OjXcdSxJnbLS0kPzddbPbsFCOUFQQKBge1dBv8AEjY/JJ1m4ZpJQDfwbYB+0g8yOvXybpZ8eHm21AfTesgRuXrOpUpjzj9ELnf3luWyTe+Tek0L2ZmPkBSx3teX6lW4uTKS0v7Wou9v7huY/VDj+l24sG9K5vLff8GOv7NzEy/wl43WEneWivd3a7g2w3sRzKyGybeqyKnwRAq70AihB5/on//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AR//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AR//Z", "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } })
+	                break
 				case 'simih':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -1981,8 +1981,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
 				case 'clone':
 					if (!isGroup) return reply(mess.only.group)
 					if (args.length < 1) return reply('𝘁𝗮𝗴 𝘁𝗮𝗿𝗴𝗲𝘁 𝘆𝗮𝗻𝗴 𝗺𝗮𝘂 𝗱𝗶 𝗰𝗹𝗼𝗻𝗲!!!')
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					if (ben.message.extendedTextMessage === undefined || ben.message.extendedTextMessage === null) return reply('Tag cvk')
+					mentioned = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
 					try {
 						pp = await client.getProfilePicture(id)
@@ -2017,14 +2017,14 @@ case 'ownergc':
 	break
 					case 'fitnah':
 					var gh = body.slice(8)
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					mentioned = ben.message.extendedTextMessage.contextInfo.mentionedJid
 						var replace = gh.split("|")[0];
 						var targets = gh.split("|")[1];
 						var bot = gh.split("|")[2];
 						client.sendMessage(from, `${bot}`, text, {quoted: { key: { fromMe: false, participant: `${mentioned}`, ...(from ? { remoteJid: from } : {}) }, message: { conversation: `${targets}` }}})
 						break
 				case 'wait':
-					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+					if ((isMedia && !ben.message.videoMessage || isQuotedImage) && args.length == 0) {
 						reply(mess.wait)
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						media = await client.downloadMediaMessage(encmedia)
