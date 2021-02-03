@@ -1,11 +1,8 @@
 {
-  "name": "AR15BOT",
-  "version": "1.0.0",
+  "name": "SELF-Benny",
+  "version": "2.0.0",
   "description": "Termux only",
   "main": "index.js",
-  "scripts": {
-    "test": "node index"
-  },
   "directories": {
     "lib": "lib"
   },
