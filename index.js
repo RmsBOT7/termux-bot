@@ -293,8 +293,8 @@ client.on('message-new', async (ben) => {
 		const from = ben.key.remoteJid
 		const type = Object.keys(ben.message)[0]
 		const barbarkey = '--'
-		const naufalkey = 'john-doe'
-		const vhtearkey = 'JanganDiGantiKontol'
+		const naufalkey = '--'
+		const vhtearkey = '--'
 		const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 		const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
 		body = (type === 'conversation' && ben.message.conversation.startsWith(prefix)) ? ben.message.conversation : (type == 'imageMessage') && ben.message.imageMessage.caption.startsWith(prefix) ? ben.message.imageMessage.caption : (type == 'videoMessage') && ben.message.videoMessage.caption.startsWith(prefix) ? ben.message.videoMessage.caption : (type == 'extendedTextMessage') && ben.message.extendedTextMessage.text.startsWith(prefix) ? ben.message.extendedTextMessage.text : ''
