@@ -998,7 +998,7 @@ client.on('message-new', async (ben) => {
 				 break
 				 case 'hitung':
 				 var mtk = body.slice(8)
-				 teks = `*[ MATEMATIKA ]*\n\n*Kalkulator*\n\nHasil dari:\n${mtk} = ${Math_js.evaluate(mtk)}`
+				 teks = `「 *KALKULATOR* 」\n\nHasil dari:\n${mtk} = ${Math_js.evaluate(mtk)}`
 				 client.sendMessage(from, teks, text, {quoted: ben})
 				 break
 				case 'quran':
@@ -1296,6 +1296,7 @@ case 'help':
   ├─ ❏ ${prefix}hidetag1 <text>
   ├─ ❏ ${prefix}hidetag2 <text>
   ├─ ❏ ${prefix}runtime
+  ├─ ❏ ${prefix}hitung
   ├─ ❏ ${prefix}artinama
   ├─ ❏ ${prefix}igsearch
   ├─ ❏ ${prefix}infogempa
@@ -2180,7 +2181,7 @@ case 'ownergc':
 						console.log(muehe)
 						reply(muehe)
 					} else {
-						console.log(color('[SELF-BOT]','green'), 'Any Message ? ', color(sender.split('@')[0]))
+						console.log(color('[SELF-BOT]', 'green'), 'Any Message ? ', color(sender.split('@')[0]))
 					}
 				}
         } catch (e) {
