@@ -364,6 +364,19 @@ client.on('message-new', async (ben) => {
 		if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 		if (ben.key.fromMe) console.log(color('Owner lewat', 'cyan'))
 		if (!ben.key.fromMe && banChats === true) return
+		
+		//Anti kasar function
+		if (isGroup && isKasar && !ben.key.fromMe) {
+			if (ben.includes('bokep')) {
+				 await client.sendMessage(from, `「 *PETUGAS PEMBERSIH* 」\n\nKamu nakal si!\nMaaf tapi kami harus mengeluarkan kamu...\nSelamat tingal~`, text, {quoted: ben})
+				 await client.groupRemove(groupId, sender)
+				console.log(color('[KICK]', 'red'), color('Mengirim link grup lain!', 'yellow'))
+				}
+			}
+		
+	   
+		
+		
 			switch(command) {
 				case 'donasi':
 				case 'donate':
@@ -2113,6 +2126,23 @@ client.sendMessage(from, drre, text, {quoted: ben})
 						reply('Success Disable Welcome!')
 					} else {
 						reply('𝗸𝗲𝘁𝗶𝗸 𝗽𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝟭 𝘂𝗻𝘁𝘂𝗸 𝗺𝗲𝗻𝗴𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻, 𝟬 𝘂𝗻𝘁𝘂𝗸 𝗺𝗲𝗻𝗼𝗻𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻\n𝗰𝗼𝗻𝘁𝗼𝗵: ${prefix}𝘄𝗲𝗹𝗰𝗼𝗺𝗲 𝟭')
+					}
+					break
+				case 'antikasar':
+					if (!isGroup) return reply(mess.only.group)
+					if (args.length < 1) return reply('Pilih on atau off!')
+					const argt = body.split(' ')
+					if (argt[1] == 'on') {
+						if (isKasar) return reply('Udah lu nyalain pantek:v')
+						kasar.push(from)
+						fs.writeFileSync('./src/antibadword.json', JSON.stringify(kasar))
+						reply('Success Enable Anti kasar!')
+					} else if (argt[1] == 'off') {
+						kasar.splice(from, 1)
+						fs.writeFileSync('./src/antibadword.json', JSON.stringify(kasar))
+						reply('Success Disable Anti kasar!')
+					} else {
+						reply('𝗸𝗲𝘁𝗶𝗸 𝗽𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝟭 𝘂𝗻𝘁𝘂𝗸 𝗺𝗲𝗻𝗴𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻, 𝟬 𝘂𝗻𝘁𝘂𝗸 𝗺𝗲𝗻𝗼𝗻𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻\n𝗰𝗼𝗻𝘁𝗼𝗵: ${prefix}antikasar on')
 					}
 					break
 				case 'clone':
